@@ -34,7 +34,6 @@ public class TriangleTest {
     public void testNotTriangle() {
         assertEquals("非三角形", new Triangle().classify(1, 2, 3));
         assertEquals("非三角形", new Triangle().classify(3, 4, 7));
-        assertEquals("非三角形", new Triangle().classify(100, 1, 100));
     }
 
     @Test
