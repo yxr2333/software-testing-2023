@@ -1,6 +1,7 @@
 plugins {
     id 'java'
     id "com.github.spotbugs" version "$spotbugspluginVersion"
+    id "info.solidsoft.pitest" version "1.7.4"
 }
 
 group 'com.ctgu'
@@ -49,6 +50,14 @@ spotbugs {
     maxHeapSize = '2g'
     extraArgs = [ '-nested:false' ]
     jvmArgs = [ '-Duser.language=en' ]
+}
+
+pitest {
+    targetClasses = ['com.ctgu.icecream.testing.MyLinkedList']
+    threads = 4
+    outputFormats = ['HTML']
+    timestampedReports = true
+    junit5PluginVersion = '0.15'
 }
 
 spotbugsTest {
